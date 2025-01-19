@@ -1,0 +1,13 @@
+# Arquivos do Jupyter
+.ipynb_checkpoints/
+
+# Arquivos do sistema
+*.log
+*.pyc
+__pycache__/
+
+# Arquivos de configuração
+*.env
+*.venv
+.envrc
+.venv/
