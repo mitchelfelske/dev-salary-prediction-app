@@ -11,3 +11,6 @@ __pycache__/
 *.venv
 .envrc
 .venv/
+
+# Arquivos guia de aprendizado
+guiding-code/
