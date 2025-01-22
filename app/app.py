@@ -41,7 +41,7 @@ def predict():
     # Model prediction
     prediction = model.predict(standardized_data)
 
-    return "$ {} [valor anual]".format(round(prediction[0], 2))
+    return render_template('home.html', prediction=str((round(prediction[0], 2))))
 
 # run the flask app
 if __name__ == "__main__":
