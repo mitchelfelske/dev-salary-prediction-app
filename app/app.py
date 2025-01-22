@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 import pickle
 
 # create an app instance
@@ -16,8 +16,8 @@ scaler = pickle.load(open('../resources/scaler.pkl', 'rb'))
 
 # at the end point /, call method hello
 @app.route("/")
-def hello():
-    return "Hello World!"
+def home():
+    return render_template('home.html')
 
 @app.route("/predict", methods=["POST"])
 def predict():
