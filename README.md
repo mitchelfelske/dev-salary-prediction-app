@@ -29,6 +29,25 @@ Develop a web application integrated with a machine learning model to predict de
 - Transform hiring and career management practices in the tech sector by supporting data-driven decisions.
 - Contribute to a more balanced and transparent tech job market.
 
+## **Running the Application**
+
+Open the terminal or command prompt and navigate to the application 'app' folder:
+
+```bash
+   cd /path-to-app-folder/app
+```
+
+Install the dependencies:
+
+```bash
+ pip install -r requirements.txt
+```
+
+Execute the application:
+
+```bash
+gunicorn -w 4 app:app
+```
 ---
 
 ## **Functional Requirements (RF)**
