@@ -5,93 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web App Developer Salary Prediction</title>
+    <link rel="stylesheet" href="./static/style.css">
 </head>
 
 <body>
-    <div>
-        <h1>Project 1 - Web App Developer Salary Prediction</h1>
-    </div>
-
-    <div>
-        <p>Enter the job details below to predict the salary</p>
-
+    <div class="main-container">
         <div>
-            <form action="{{ url_for('predict') }}" method="post">
-                <label for="country">Country:</label>
-                <select name="country" id="country">
-                    <option selected>Select the Country</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="Canada">Canada</option>
-                    <option value="France">France</option>
-                    <option value="Germany">Germany</option>
-                    <option value="India">India</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Netherlands">Netherlands</option>
-                    <option value="Poland">Poland</option>
-                    <option value="Russian Federation">Russian Federation</option>
-                    <option value="Spain">Spain</option>
-                    <option value="Sweden">Sweden</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="United States">United States</option>
-                    <option value="Other">Other</option>
-                </select>
+            <h1>Project 1 - Web App Developer Salary Prediction</h1>
+        </div>
 
-                <label for="education">Education Level:</label>
-                <select name="education" id="education">
-                    <option selected>Select the Education Level</option>
-                    <option value="Bachelor’s degree">Bachelor’s degree</option>
-                    <option value="Master’s degree">Master’s degree</option>
-                    <option value="Post grad">Post grad</option>
-                    <option value="Less than a Bachelors">Less than a Bachelors</option>
-                </select>
+        <div class="content">
+            <p style="text-align: center;">Enter the job details below to predict the salary</p>
 
-                <label for="devtype">Developer Type:</label>
-                <select name="devtype" id="devtype">
-                    <option selected>Select the Developer Type</option>
-                    <option value="Developer, back-end">Developer, back-end</option>
-                    <option value="Developer, full-stack">Developer, full-stack</option>
-                    <option value="Database administrator">Database administrator</option>
-                    <option value="Developer, front-end">Developer, front-end</option>
-                    <option value="Developer, front-end">Developer, front-end</option>
-                    <option value="Academic researcher">Academic researcher</option>
-                    <option value="Designer">Designer</option>
-                    <option value="Developer, desktop or enterprise applications">Developer, desktop or enterprise
-                        applications</option>
-                    <option value="Data scientist or machine learning specialist">Data scientist or machine learning
-                        specialist</option>
-                    <option value="Developer, mobile">Developer, mobile</option>
-                    <option value="Developer, embedded applications or devices">Developer, embedded applications or
-                        devices</option>
-                    <option value="Other">Other</option>
-                    <option value="DevOps specialist">DevOps specialist</option>
-                    <option value="Developer, QA or test">Developer, QA or test</option>
-                    <option value="Engineer, data">Engineer, data</option>
-                    <option value="Engineering manager">Engineering manager</option>
-                    <option value="Developer, game or graphics">Developer, game or graphics</option>
-                </select>
+            <div class="prediction-form">
+                <form action="{{ url_for('predict') }}" method="post">
+                    <label for="country">Country:</label>
+                    <select name="country" id="country">
+                        <option selected>Select the Country</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Canada">Canada</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="India">India</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Russian Federation">Russian Federation</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="Other">Other</option>
+                    </select>
 
-                <label for="experience">Years of Experience:</label>
-                <input type="number" name="yearscode" id="experience" placeholder="Enter the Years of Experience">
+                    <label for="education">Education Level:</label>
+                    <select name="education" id="education">
+                        <option selected>Select the Education Level</option>
+                        <option value="Bachelor’s degree">Bachelor’s degree</option>
+                        <option value="Master’s degree">Master’s degree</option>
+                        <option value="Post grad">Post grad</option>
+                        <option value="Less than a Bachelors">Less than a Bachelors</option>
+                    </select>
 
-                <br>
-                <br>
+                    <label for="devtype">Developer Type:</label>
+                    <select name="devtype" id="devtype">
+                        <option selected>Select the Developer Type</option>
+                        <option value="Developer, back-end">Developer, back-end</option>
+                        <option value="Developer, full-stack">Developer, full-stack</option>
+                        <option value="Database administrator">Database administrator</option>
+                        <option value="Developer, front-end">Developer, front-end</option>
+                        <option value="Developer, front-end">Developer, front-end</option>
+                        <option value="Academic researcher">Academic researcher</option>
+                        <option value="Designer">Designer</option>
+                        <option value="Developer, desktop or enterprise applications">Developer, desktop or enterprise
+                            applications</option>
+                        <option value="Data scientist or machine learning specialist">Data scientist or machine learning
+                            specialist</option>
+                        <option value="Developer, mobile">Developer, mobile</option>
+                        <option value="Developer, embedded applications or devices">Developer, embedded applications or
+                            devices</option>
+                        <option value="Other">Other</option>
+                        <option value="DevOps specialist">DevOps specialist</option>
+                        <option value="Developer, QA or test">Developer, QA or test</option>
+                        <option value="Engineer, data">Engineer, data</option>
+                        <option value="Engineering manager">Engineering manager</option>
+                        <option value="Developer, game or graphics">Developer, game or graphics</option>
+                    </select>
 
-                <button type="submit">Predict Salary</button>
+                    <label for="experience">Years of Experience:</label>
+                    <input type="number" name="yearscode" id="experience" placeholder="Enter the Years of Experience">
 
-                <br>
-                <br>
+                    <button type="submit">Predict Salary</button>
 
-                {% if prediction %}
-                <p>Salary Prediction: $ {{ prediction }} [annual value]</p>
-                {% endif %}
+                    {% if prediction %}
+                    <p style="text-align: center;">Salary Prediction: $ {{ prediction }} [annual value]</p>
+                    {% endif %}
 
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Data Science Academy</p>
+        <p class="body-copy" style="text-align: center;">&copy; 2025 Data Science Academy</p>
     </footer>
 </body>
 
